@@ -285,28 +285,28 @@ class configtool extends \PLUSPEOPLE\SlowTemplate\Template {
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1;';
 
 		$query2 = 'CREATE TABLE IF NOT EXISTS `pesapi_payment` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `account_id` int(11) NOT NULL,
-  `super_type` int(11) NOT NULL,
-  `type` int(11) NOT NULL,
-  `receipt` varchar(255) NOT NULL,
-  `time` datetime NOT NULL,
-  `phonenumber` varchar(45) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `account` varchar(255) NOT NULL,
-  `status` int(11) NOT NULL,
-  `amount` bigint(20) NOT NULL,
-  `post_balance` bigint(20) NOT NULL,
-  `note` varchar(255) NOT NULL,
-  `transaction_cost` bigint(20) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `type_index` (`type`),
-  KEY `name_index` (`name`),
-  KEY `phone_index` (`phonenumber`),
-  KEY `time_index` (`time`),
-  KEY `super_index` (`super_type`),
-  KEY `fk_mpesapi_payment_account_idx` (`account_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1;';
+                    `id` int(11) NOT NULL AUTO_INCREMENT,
+                    `account_id` int(11) NOT NULL,
+                    `super_type` int(11) NOT NULL,
+                    `type` int(11) NOT NULL,
+                    `receipt` varchar(255) NOT NULL,
+                    `time` datetime NOT NULL,
+                    `phonenumber` varchar(45) NOT NULL,
+                    `name` varchar(255) NOT NULL,
+                    `account` varchar(255) NOT NULL,
+                    `status` int(11) NOT NULL,
+                    `amount` bigint(20) NOT NULL,
+                    `post_balance` bigint(20) NOT NULL,
+                    `note` varchar(255) NOT NULL,
+                    `transaction_cost` bigint(20) NOT NULL,
+                    PRIMARY KEY (`id`),
+                    KEY `type_index` (`type`),
+                    KEY `name_index` (`name`),
+                    KEY `phone_index` (`phonenumber`),
+                    KEY `time_index` (`time`),
+                    KEY `super_index` (`super_type`),
+                    KEY `fk_mpesapi_payment_account_idx` (`account_id`)
+                  ) ENGINE=InnoDB  DEFAULT CHARSET=latin1;';
 
 		$query3 = 'ALTER TABLE `pesapi_payment` ADD CONSTRAINT `fk_mpesapi_payment_account` FOREIGN KEY (`account_id`) REFERENCES `pesapi_account` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;';
 

@@ -153,7 +153,7 @@ class Account {
       $db = Database::instantiate(Database::TYPE_WRITE);
 
 			$newSettings = array("PUSH_IN_URL" => "",
-													 "PUSH_IN_SECRET" => "",
+									                		 "PUSH_IN_SECRET" => "",
 													 "PUSH_OUT_URL" => "",
 													 "PUSH_OUT_SECRET" => "",
 													 "PUSH_NEUTRAL_URL" => "",
